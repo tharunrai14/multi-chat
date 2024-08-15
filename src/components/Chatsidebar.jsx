@@ -6,7 +6,7 @@ function Sidebar({ setSelectedUser, filter, setFilter }) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/users')
+    fetch('https://chat-backendd-aff9218c1774.herokuapp.com/users')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(err => console.error(err));

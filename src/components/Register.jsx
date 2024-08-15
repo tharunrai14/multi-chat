@@ -12,7 +12,7 @@ function Register({ setCurrentUser }) {
       return;
     }
 
-    fetch('http://localhost:3000/register', {
+    fetch('https://chat-backendd-aff9218c1774.herokuapp.com/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

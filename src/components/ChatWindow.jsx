@@ -7,14 +7,14 @@ function ChatWindow({ selectedUser, currentUser }) {
   const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    const socket = io('http://localhost:3000');
+    const socket = io('https://chat-backendd-aff9218c1774.herokuapp.com/');
 
     // Generate a unique room ID based on the current user and selected user
     const roomId = [currentUser.id, selectedUser.id].sort().join('-');
     socket.emit('join', roomId);
 
     // Fetch previous messages from the server using fetch API
-    fetch(`http://localhost:3000/messages?senderId=${currentUser.id}&receiverId=${selectedUser.id}`)
+    fetch(`https://chat-backendd-aff9218c1774.herokuapp.com/messages?senderId=${currentUser.id}&receiverId=${selectedUser.id}`)
       .then(response => response.json())
       .then(data => {
         setMessages(data);
@@ -46,7 +46,7 @@ function ChatWindow({ selectedUser, currentUser }) {
       };
 
       // Send message to the server
-      const socket = io('http://localhost:3000');
+      const socket = io('https://chat-backendd-aff9218c1774.herokuapp.com/');
       socket.emit('message', newMessage);
 
       // Update local state with the new message

@@ -5,7 +5,7 @@ function Login({ setCurrentUser }) {
   const [username, setUsername] = useState('');
 
   const handleLogin = () => {
-    fetch('http://localhost:3000/login', {
+    fetch('https://chat-backendd-aff9218c1774.herokuapp.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
